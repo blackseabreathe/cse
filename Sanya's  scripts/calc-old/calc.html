@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"><meta name="author" content="Miller site" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>Калькулятор КСЭ</title>
+<!--favicon/IOS icon-->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/ico" />
+<link rel="apple-touch-icon" href="img/safari60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/safari76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/safari120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/safari152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/safari180.png">
+<!--css-->
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<link rel="stylesheet" href="css/media.css" /></head>
+<body>
+<!--надели шапку-->
+<div class="calc-modal"><div class="content">
+<img src="img/logo.svg" class="logo" alt="ксе курьер" />
+<span class="center">Центр<br> бизнес услуг</span>
+<span class="calc"><a href="#">калькулятор</a></span>
+<span class="whereIsMySending"><a href="#">где моя посылка</a></span>
+<span class="phone">+7 (4852) 66 30 40</span>
+<span class="callback modal_btn">Заказать звонок</span><hr class="hr-menu" />
+<div class="comeBack"><a href="/">Вернуться назад</a></div>
+<!--форма калькулятора-->
+
+
+<!--
+<div class="headline">стоимость доставки</div>
+<div class="blue-block">
+<div class="whereFrom">Откуда <span>Ярославль</span></div>
+<div class="whereTo">Куда <span>Москва</span></div>
+<div class="whatExacly">Что <span>Документы 0,5 кг</span></div>
+<div class="weight">Объёмный вес* <span>0,1 кг</span></div>
+<button class="change-send" type="button">Изменить</button></div>
+<div class="hurry">Срочная, 1-2 рабочих дня <span>472,52 руб.</span></div>
+<div class="super-hurry">Сверхсрочная, звоните <span>708,78 руб.</span></div>
+<div class="orange-off">
+<span class="getItNow">Получи скидку 20% по промокоду!</span>
+<p class="off-info">Скидка действительна при отправке из нашего офиса по адресу г. Ярославль, пр-кт Толбухина, д.40 по промокоду</p>
+<button type="button" class="getPromocode">Получить промокод</button>
+<span class="twentyPercent">20%</span></div>
+<p class="inCase">*В случае превышения объёмного веса над физическим, тариф на отправку определяется в соответствии с объёмным весом.</p>
+-->
+
+
+</div></div>
+<!--натянули подвал-->
+<footer><div class="content"><img src="img/logo.svg" />
+<div class="ogrn">ОГРН 1055000515360<br> ИНН 5001051656</div>
+<div class="personalData"><a href="privacy_policy.html" target="_blank">Политика конфиденциальности</a></div>
+<div class="developers">Дизайн: <a href="http://strogiy.ru" target="_blank">strogiy.ru</a><br> Разработка: <a href="https://vk.com/makmiller" target="_blank">Miller Site</a></div></div></footer>
+<!-- Формы в модальных окнах -->
+<div style="display:none">
+<div class="box-modal" id="small-modal">
+<div class="modal-close arcticmodal-close"></div>
+<div class="modal-content-box">
+<span class="legend">Заказать звонок</span>
+<span class="leave-a-contact">Оставьте свои контакты, мы<br> свяжемся с вами в ближайшее<br> время</span>
+<form action="feedback/index.php" method="get" class="form-3" name="form-3">
+<input name="name" type="text" placeholder="Имя">
+<input name="tell" type="text" placeholder="Телефон">
+<button class="feedback usual_btn btn btn-block btn-large btn-success" name="send" type="button">Отправить</button>
+<p>Нажимая на кнопку, вы даёте согласие на обработку <a href="privacy_policy.html" target="_blank">персональных данных.</a></p>
+</form></div></div></div>
+<!-- где моя посылка -->
+<div class="dark-bg"></div>
+<div class="popup_container"><div class="to-close-modal"></div><div class="padding-window"><div class="modal-send"><div class="modal-close-2"></div>
+<div class="for-everithing"><div class="headline">отслеживание</div>
+<form action="" method="get" name="modal-send">
+<span>Введите номер:</span>
+<label class="for-spy"><input type="radio" name="spy" class="radio" value="Накладная" checked>
+<div class="custom-radio"></div>
+<div class="click-spy">накладной</div></label>
+<label class="for-spy"><input type="radio" name="spy" class="radio" value="Заказ">
+<div class="custom-radio"></div>
+<div class="click-spy">заказа</div></label>
+<input id="typeNumberHere" type="text" class="number-of-send" />
+<button type="button" class="usual_btn">Отследить груз</button></form></div></div></div></div>    
+<!--модальное окно промокод-->
+<div class="popup_container_2"><div class="to-close-modal"></div><div class="padding-window_2"><div class="promo-modal"><div class="modal-close-2"></div>
+<div class="headline">промокод</div>
+<form action="feedback/index.php" method="get" name="form-promo">
+<input type="text" name="promo" class="promo">
+<input class="email-promo" name="email-promo" type="text" placeholder="E-mail" >
+<button type="button" class="feedback usual_btn btn btn-block btn-large btn-success" name="send">Получить на E-mail</button></form></div></div></div>
+<!--Google библиотека-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--feedback-->
+<script src="feedback/js/feedback.js"></script>
+<link rel="stylesheet" type="text/css" href="feedback/css/jquery.arcticmodal.css">
+<!--скрипты-->
+<script>
+//вызываем feedback
+$(document).ready(function() {
+$(document).on('click', '.modal_btn', function(){
+$('#small-modal').arcticmodal();});
+//промокод
+$('.getPromocode').on('click',function(){
+$('.dark-bg, .popup_container_2').fadeIn(300);
+$('.promo').focus();
+$('body').addClass('no-scroll').removeClass('yes-scroll');});
+$('.to-close-modal, .modal-close-2').on('click', function(){
+$('.dark-bg, .popup_container_2').fadeOut(300);
+$('body').removeClass('no-scroll').addClass('yes-scroll');});
+//затемнение и модальные окна
+$('.whereIsMySending').on('click', function(){
+$('.dark-bg, .popup_container').fadeIn(300);
+$('body').addClass('no-scroll').removeClass('yes-scroll');
+$('#typeNumberHere').focus();});
+$('.to-close-modal, .modal-close-2').on('click',function(){
+$('.dark-bg, .popup_container').fadeOut(300);
+$('body').removeClass('no-scroll').addClass('yes-scroll');});
+
+
+
+});
+</script>
+<!--calc api-->
+
+</body></html>
