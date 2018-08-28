@@ -72,8 +72,11 @@
 <div class="whatExacly">Что <span>Документы 0,5 кг</span></div>
 <div class="weight">Объёмный вес* <span>0,1 кг</span></div>
 <button class="change-send" type="button">Изменить</button></div>
-<div class="hurry">Срочная, 1-2 рабочих дня <span>472,52 руб.</span></div>
-<div class="super-hurry">Сверхсрочная, звоните <span>708,78 руб.</span></div>
+<div class="hurry">Срочная, 1-2 рабочих дня <span>472,52 руб.</span>
+<p class="off_less_then"><s>500 руб.</s></p></div>
+<div class="super-hurry">Сверхсрочная, звоните <span>708,78 руб.</span>
+<p class="off_less_then off_less_then_2"><s>850 руб.</s></p></div>
+<p class="price_off_off">Цена указана<br> со скидкой 20%.</p>
 <div class="orange-off">
 <span class="getItNow">Получи скидку 20% по промокоду!</span>
 <p class="off-info">Скидка действительна при отправке из нашего офиса по адресу г. Ярославль, пр-кт Толбухина, д.40 по промокоду</p>
@@ -114,11 +117,15 @@
 <button type="button" class="usual_btn">Отследить груз</button></form></div></div></div></div>    
 <!--модальное окно промокод-->
 <div class="popup_container_2"><div class="to-close-modal"></div><div class="padding-window_2"><div class="promo-modal"><div class="modal-close-2"></div>
-<div class="headline">промокод</div>
-<form action="feedback/index.php" method="get" name="form-promo">
-<input type="text" name="promo" class="promo">
+<div class="headline">получи скидку</div>
+<p class="go_to_office">Для того, чтобы воспользоваться скидкой, необходимо привезти отправку в офис и назвать промокод</p>
+<form action="feedback/index.php" method="get" name="form-promo-calc">
+<label class="prm">Промокод:</label>
+<input type="text" name="promo" class="promo promo_mo" value="курьер76" readonly>
+<p class="rmbprm">Запомните его или сохраните себе на электронную почту</p>
+<div class="forrel">
 <input class="email-promo" name="email-promo" type="text" placeholder="E-mail" >
-<button type="button" class="feedback usual_btn btn btn-block btn-large btn-success" name="send">Получить на E-mail</button></form></div></div></div>
+<button type="button" class="feedback usual_btn btn btn-block btn-large btn-success" name="send">Получить на E-mail</button></div></form></div></div></div>
 <!--Google библиотека-->
 <script src="js/jquery.min.js"></script>
 <!--feedback-->

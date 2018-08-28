@@ -132,6 +132,10 @@ function feedback(vars) {
 					  $('.tell,.col6 input,.form-3 input').css('border', '1px solid transparent');
 					  
 					  //сюда вставить код чтобы закрылся попап при успешной отправки формы
+                     $('.popup_container_2, .dark-bg').fadeOut(300);
+                     $('body').removeClass('no-scroll').addClass('yes-scroll');
+                     
+                     
                   }
 
             }

@@ -96,15 +96,10 @@ $('body').removeClass('no-scroll').addClass('yes-scroll');});
 //промокод
 $('.off2, .getPromocode').on('click',function(){
 $('.dark-bg, .popup_container_2').fadeIn(300);
-$('.promo').focus();
 $('body').addClass('no-scroll').removeClass('yes-scroll');});
 $('.to-close-modal, .modal-close-2').on('click', function(){
 $('.dark-bg, .popup_container_2').fadeOut(300);
 $('body').removeClass('no-scroll').addClass('yes-scroll');});
-//При вводе промокода буквы становятся заглавными
-var input = document.querySelector(".promo");
-input.addEventListener("input", function() {
-this.value = this.value.toUpperCase();})
 //вводим только цифры в инпутах калькулятора
 $('.what-to-send input').on('keydown', function(e){
 if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
@@ -112,7 +107,6 @@ return false;
 };})
 $('.calcPageBtn').on('click', function(){
 $('.holder').fadeIn(600);});
-
 //карта гугл 57.627412, 39.858403
 google.maps.event.addDomListener(window, 'load', init);  
 function init() {

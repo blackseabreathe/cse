@@ -101,13 +101,14 @@ $form['form-promo'] = array(
 		'promo' => array(
 			'title' => 'Промокод',
 			'validate' => array(
-            //'preg' => 'КУРЬЕР76',
-				'minlength' => '8',
-                'maxlength' => '8',
+			'minlength' => '8',
+            'maxlength' => '8',
+            'substr' => '8',
 			),
 			'messages' => array(
-				'preg' => 'Введите действительный промокод',
-				'minlength' => 'Введите действительный промокод',
+				//'preg' => 'Введите действительный промокод',
+				//'minlength' => 'Введите действительный промокод',
+                //'maxlength' => 'Введите действительный промокод',
 			)
 		),
 		'email-promo' => array(
@@ -126,7 +127,7 @@ $form['form-promo'] = array(
 	),
 	'cfg' => array(
 		'charset' => 'utf-8',
-		'subject' => 'Промокод',
+		'subject' => 'Промокод отправлен на почту',
 		'title' => 'Данные с формы Промокод',
 		'ajax' => true,
 		'validate' => true,
@@ -141,10 +142,65 @@ $form['form-promo'] = array(
 		'antispam' => 'email77',
 		'antispamjs' => 'address77',
 		'okay' => '<b>Промокод отправлен Вам на почту!</b>',
-		'fuck' => 'Заявка не отправлена - ERROR',
+		'fuck' => 'Промокод не отправлен - ERROR',
 		'spam' => 'Cпам робот',
 		'notify' => 'color-modal-textbox',
-		'usepresuf' => false
+		'usepresuf' => false,
+        'to_user' => true,
+	)
+);
+
+$form['form-promo-calc'] = array(
+	'fields' => array(
+		'promo' => array(
+			'title' => 'Промокод',
+			'validate' => array(
+			'minlength' => '8',
+            'maxlength' => '8',
+            'substr' => '8',
+			),
+			'messages' => array(
+				//'preg' => 'Введите действительный промокод',
+				//'minlength' => 'Введите действительный промокод',
+                //'maxlength' => 'Введите действительный промокод',
+			)
+		),
+		'email-promo' => array(
+			'title' => 'Ваш e-mail',
+			'validate' => array(
+				//'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '5',
+				'maxlength' => '55',
+			),
+			'messages' => array(
+				//'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна e-mail - %2$s символов',
+				'maxlength' => 'Максимальная длинна e-mail больше допустимой (55)',
+			)
+		),
+	),
+	'cfg' => array(
+		'charset' => 'utf-8',
+		'subject' => 'Промокод с калькулятора',
+		'title' => 'Данные с формы Промокод',
+		'ajax' => true,
+		'validate' => true,
+		'from_email' => 'info@cse-yar.ru',
+		'from_name' => 'noreply',
+		'to_email' => 'info@cse-yar.ru',
+		'to_name' => 'noreply1, noreply2',
+		'geoip' => true,
+		'referer' => true,
+		'type' => 'html',
+		'tpl' => true,
+		'antispam' => 'email77',
+		'antispamjs' => 'address77',
+		'okay' => '<b>Промокод отправлен Вам на почту!</b>',
+		'fuck' => 'Промокод не отправлен - ERROR',
+		'spam' => 'Cпам робот',
+		'notify' => 'color-modal-textbox',
+		'usepresuf' => false,
+        'to_user' => true,
 	)
 );
 
@@ -164,7 +220,7 @@ $form['form-1'] = array(
 	),
 	'cfg' => array(
 		'charset' => 'utf-8',
-		'subject' => 'Заявка оставьте заявку',
+		'subject' => 'Заявка на консультацию 15 мин',
 		'title' => 'Данные с оранжевой формы с коробкой',
 		'ajax' => true,
 		'validate' => true,
@@ -215,7 +271,7 @@ $form['form-2'] = array(
 	),
 	'cfg' => array(
 		'charset' => 'utf-8',
-		'subject' => 'Заявка с сайта c формы в контактах',
+		'subject' => 'Заказ на консультацию',
 		'title' => 'Данные с формы обратной связи',
 		'ajax' => true,
 		'validate' => true,
@@ -265,7 +321,7 @@ $form['form-3'] = array(
 	),
 	'cfg' => array(
 		'charset' => 'utf-8',
-		'subject' => 'Заявка с сайта с формы заказать звонок',
+		'subject' => 'Заказан звонок',
 		'title' => 'Данные с формы обратной связи',
 		'ajax' => true,
 		'validate' => true,
@@ -459,6 +515,11 @@ if(isset($form[$act])) {
 
       //отправка письма
       $mail = mail($To, $sb['subject'], $sb['body'], $headers);
+        
+        //отправка письма юзеру на введенный им email на сайте
+        if(isset($form['cfg']['to_user'])) { 
+$mail2 = mail( $_POST['promo']." <".$_POST['email-promo'].">", $sb['subject'], $sb['body'], $headers);
+}
 
       if($mail) {
           $jsonBox['ok'] = 1;
